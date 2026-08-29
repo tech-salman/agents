@@ -1,5 +1,5 @@
-# [10 Free AI Agents Comparison Table](https://tech-salman.github.io/agents/)
-
+# [10 Free AI Agents](https://tech-salman.github.io/agents/)
+Click here to visit for clear view.
 ---
 
 ## 🛠️ Included AI Agents
