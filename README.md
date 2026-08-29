@@ -1,18 +1,5 @@
 # 10 Free AI Agents Comparison Table
 
-An interactive, dark-themed HTML/CSS comparison table showcasing 10 free AI agent platforms[cite: 1]. Each platform name acts as a dropdown trigger with built-in hover transition delays, providing direct access to its official website and GitHub repository.
-
----
-
-## ✨ Features
-
-* **Dark-Themed UI:** Modern dark palette with frosted layers, contrast borders, and responsive styling.
-* **Smart Hover Delay:** 
-  * **0.5s Intent Delay:** Prevents accidental dropdown triggers when quickly moving the cursor across the screen.
-  * **1.0s Disappear Delay:** Ensures dropdowns don't prematurely close when navigating toward menu items.
-* **Pure CSS Implementation:** Hover animations, layout shifts, and delay logic require no JavaScript dependencies.
-* **Direct Links:** Includes official websites and GitHub repositories for all 10 AI platforms[cite: 1].
-
 ---
 
 ## 🛠️ Included AI Agents
@@ -31,21 +18,3 @@ An interactive, dark-themed HTML/CSS comparison table showcasing 10 free AI agen
 | **Flowise** | Visual AI agent builder[cite: 1] | No-code AI workflow creation[cite: 1] |
 
 ---
-
-## 🚀 Getting Started
-
-### 1. File Setup
-Save the table file as `index.html` on your machine.
-
-### 2. Previewing Locally
-Double-click `index.html` or open it with any modern web browser (Chrome, Firefox, Edge, Safari):
-
-```bash
-# macOS
-open index.html
-
-# Linux
-xdg-open index.html
-
-# Windows
-start index.html
