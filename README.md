@@ -1,4 +1,4 @@
-# [10 Free AI Agents Comparison Table](https://github.com/tech-salman/agents/agents.html)
+# [10 Free AI Agents Comparison Table](https://tech-salman.github.io/agents/)
 
 ---
 
