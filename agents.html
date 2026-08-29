@@ -1,152 +1,187 @@
-<style>
-  .ai-agents-table-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-  .ai-agents-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    font-size: 14px;
-    line-height: 1.5;
-    background-color: #16171a;
-    color: #e2e8f0;
-    border-radius: 12px;
-  }
-  .ai-agents-table th, 
-  .ai-agents-table td {
-    padding: 14px 18px;
-    border-bottom: 1px solid #262930;
-    vertical-align: middle;
-  }
-  .ai-agents-table thead th {
-    background-color: #1f2228;
-    color: #f8fafc;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-  }
-  .ai-agents-table tbody tr:hover {
-    background-color: #1c1e24;
-  }
-  .ai-agents-table tbody tr:last-child td {
-    border-bottom: none;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Free AI Agents Comparison</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* Dropdown Wrapper */
-  .dropdown-wrapper {
-    position: relative;
-    display: inline-block;
-  }
+    body {
+      background-color: #0d0e12;
+      color: #e2e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
 
-  /* Agent Trigger Button */
-  .agent-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(180deg, #2a2e37 0%, #20232a 100%);
-    color: #f1f5f9;
-    border: 1px solid #3b4252;
-    padding: 7px 14px;
-    font-size: 13px;
-    font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    transition: all 0.2s ease;
-    white-space: nowrap;
-  }
-  .agent-btn:hover {
-    background: linear-gradient(180deg, #323742 0%, #262a33 100%);
-    border-color: #60a5fa;
-    color: #93c5fd;
-    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
-  }
-  .agent-btn svg.chevron {
-    width: 10px;
-    height: 10px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    transition: transform 0.25s ease;
-  }
-  .dropdown-wrapper:hover .agent-btn svg.chevron {
-    transform: rotate(180deg);
-  }
+    .ai-agents-table-container {
+      width: 100%;
+      max-width: 1280px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
 
-  /* Dropdown Menu with Hover Delay Mechanism */
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 60;
-    min-width: 175px;
-    padding: 6px;
-    margin-top: 6px;
-    background-color: #1e2128;
-    border: 1px solid #333842;
-    border-radius: 10px;
-    box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.65), 0 4px 10px rgba(0, 0, 0, 0.4);
-    
-    /* Disappear transition (1s delay when unhovered) */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(6px);
-    transition: opacity 0.25s ease 1s, transform 0.25s ease 1s, visibility 0s 1.25s;
-    pointer-events: none;
-  }
+    .ai-agents-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.5;
+      background-color: #16171a;
+      color: #e2e8f0;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
 
-  /* Seamless invisible bridge to prevent dropdown closing when moving mouse across margin */
-  .dropdown-menu::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 0;
-    right: 0;
-    height: 8px;
-  }
+    .ai-agents-table th, 
+    .ai-agents-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #262930;
+      vertical-align: middle;
+    }
 
-  /* Appear transition (0.5s delay when hovered) */
-  .dropdown-wrapper:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-    transition: opacity 0.25s ease 0.5s, transform 0.25s ease 0.5s, visibility 0s 0.5s;
-  }
+    .ai-agents-table thead th {
+      background-color: #1f2228;
+      color: #f8fafc;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
 
-  /* Dropdown Items */
-  .dropdown-item {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 8px 12px;
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 12.5px;
-    font-weight: 500;
-    border-radius: 6px;
-    transition: all 0.15s ease;
-  }
-  .dropdown-item svg {
-    width: 14px;
-    height: 14px;
-    fill: currentColor;
-    flex-shrink: 0;
-    color: #94a3b8;
-    transition: color 0.15s ease;
-  }
-  .dropdown-item:hover {
-    background-color: #2b303a;
-    color: #60a5fa;
-  }
-  .dropdown-item:hover svg {
-    color: #60a5fa;
-  }
-</style>
+    .ai-agents-table tbody tr:hover {
+      background-color: #1c1e24;
+    }
+
+    .ai-agents-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Dropdown Wrapper */
+    .dropdown-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Agent Trigger Button */
+    .agent-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(180deg, #2a2e37 0%, #20232a 100%);
+      color: #f1f5f9;
+      border: 1px solid #3b4252;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .agent-btn:hover {
+      background: linear-gradient(180deg, #323742 0%, #262a33 100%);
+      border-color: #60a5fa;
+      color: #93c5fd;
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+    }
+
+    .agent-btn svg.chevron {
+      width: 10px;
+      height: 10px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      transition: transform 0.25s ease;
+    }
+
+    .dropdown-wrapper:hover .agent-btn svg.chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Dropdown Menu with Hover Delay Mechanism */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 60;
+      min-width: 175px;
+      padding: 6px;
+      margin-top: 6px;
+      background-color: #1e2128;
+      border: 1px solid #333842;
+      border-radius: 10px;
+      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.65), 0 4px 10px rgba(0, 0, 0, 0.4);
+      
+      /* Disappear transition (1s delay when unhovered) */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(6px);
+      transition: opacity 0.25s ease 1s, transform 0.25s ease 1s, visibility 0s 1.25s;
+      pointer-events: none;
+    }
+
+    /* Invisible bridge to maintain hover between button and menu */
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+    }
+
+    /* Appear transition (0.5s delay when hovered) */
+    .dropdown-wrapper:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+      transition: opacity 0.25s ease 0.5s, transform 0.25s ease 0.5s, visibility 0s 0.5s;
+    }
+
+    /* Dropdown Items */
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .dropdown-item svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+      flex-shrink: 0;
+      color: #94a3b8;
+      transition: color 0.15s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #2b303a;
+      color: #60a5fa;
+    }
+
+    .dropdown-item:hover svg {
+      color: #60a5fa;
+    }
+  </style>
+</head>
+<body>
 
 <div class="ai-agents-table-container">
   <table class="ai-agents-table">
@@ -422,3 +457,6 @@
     </tbody>
   </table>
 </div>
+
+</body>
+</html>
