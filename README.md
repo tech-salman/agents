@@ -1,5 +1,4 @@
-# [10 Free AI Agents](https://tech-salman.github.io/agents/) ### Click here to visit for clear view.
-
+# [10 Free AI Agents](https://tech-salman.github.io/agents/)
 ---
 
 ## 🛠️ Included AI Agents
